@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="file_picker_app_name" translatable="false">فایل پیکر متریال</string>
+    <string name="action_close">بستن</string>
+    <string name="empty_directory_hint">پوشه خالی</string>
+    <string name="type_archive">فایل فشرده</string>
+    <string name="type_certificate">گواهینامه</string>
+    <string name="type_directory">پوشه</string>
+    <string name="type_document">فایل</string>
+    <string name="type_drawing">نقاشی</string>
+    <string name="type_excel">صفحه گسترده (اکسل)</string>
+    <string name="type_image">تصویر</string>
+    <string name="type_music">صوت</string>
+    <string name="type_video">فیلم</string>
+    <string name="type_pdf">سند PDF</string>
+    <string name="type_power_point">ارائه (پاورپوینت)</string>
+    <string name="type_word">سند (ورد)</string>
+    <string name="type_apk">APK</string>
+</resources>
