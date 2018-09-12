@@ -28,7 +28,8 @@ public class FileTypeUtils {
         POWER_POINT(R.drawable.ic_powerpoint_box, R.string.type_power_point, "pptx", "keynote", "ppt", "pps", "pot", "odp", "otp"),
         WORD(R.drawable.ic_word_box, R.string.type_word, "doc", "docm", "docx", "dot", "mcw", "rtf", "pages", "odt", "ott"),
         ARCHIVE(R.drawable.ic_zip_box, R.string.type_archive, "cab", "7z", "alz", "arj", "bzip2", "bz2", "dmg", "gzip", "gz", "jar", "lz", "lzip", "lzma", "zip", "rar", "tar", "tgz"),
-        APK(R.drawable.ic_apk_box, R.string.type_apk, "apk");
+        APK(R.drawable.ic_apk_box, R.string.type_apk, "apk"),
+        WAVE(R.drawable.ic_wave, R.string.type_wave, "wave");
 
         private int icon;
         private int description;

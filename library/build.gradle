@@ -4,23 +4,23 @@ ext {
     bintrayRepo = 'maven'
     bintrayName = 'library'
 
-    publishedGroupId = 'com.nbsp'
-    libraryName = 'Material File Picker'
+    publishedGroupId = 'ir.esfandune'
+    libraryName = 'Android File Picker Dialog'
     artifact = 'library'
 
-    libraryDescription = 'File picker library in material design'
+    libraryDescription = 'File picker Dialog library for Android'
 
-    siteUrl = 'https://github.com/nbsp-team/MaterialFilePicker'
-    gitUrl = 'https://github.com/nbsp-team/MaterialFilePicker'
+    siteUrl = 'http://waveacc.ir'
+    gitUrl = 'https://github.com/abbasalim/FilePickerDialog-master'
 
     libraryVersion = '1.8'
 
-    developerId = 'lukaville'
-    developerName = 'Nickolay Chameev'
-    developerEmail = 'lukaville@gmail.com'
+    developerId = 'abbasalim'
+    developerName = 'Abbasali .M'
+    developerEmail = 'abbasali88m@yahoo.com'
 
     licenseName = 'GNU GENERAL PUBLIC LICENSE Version 2'
-    licenseUrl = 'https://raw.githubusercontent.com/nbsp-team/MaterialFilePicker/master/LICENSE'
+    licenseUrl = 'https://github.com/abbasalim/FilePickerDialog-master/blob/master/LICENSE'
     allLicenses = ["GNU-GPL-2.0"]
 }
 
@@ -55,3 +55,5 @@ dependencies {
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.abbasalim'

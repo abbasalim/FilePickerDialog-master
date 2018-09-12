@@ -16,4 +16,6 @@
     <string name="type_power_point">Presentation</string>
     <string name="type_word">Document</string>
     <string name="type_apk">APK</string>
+    <string name="type_wave">waveAccounting</string>
+    <string name="selectfolder">Select</string>
 </resources>

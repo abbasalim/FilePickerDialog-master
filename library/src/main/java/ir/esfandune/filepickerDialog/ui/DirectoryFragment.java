@@ -14,11 +14,12 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
 import com.nbsp.materialfilepicker.R;
+
+import java.io.File;
+
 import ir.esfandune.filepickerDialog.filter.CompositeFilter;
 import ir.esfandune.filepickerDialog.utils.FileUtils;
 import ir.esfandune.filepickerDialog.widget.EmptyRecyclerView;
-
-import java.io.File;
 
 /**
  * Created by Dimorinny on 24.10.15.
@@ -30,22 +31,28 @@ public class DirectoryFragment extends DialogFragment {
     public static final String ARG_FILTER = "arg_filter";
     public static final String ARG_SHOW_HIDDEN = "arg_showhiddenFilew";
     public static final String GO_BACK_ITEM_PATH = "GOBACK";
-    private View mEmptyView;
+    public static final String ARG_FOLDER_PICKER = "folderChooser";
+    private View mEmptyView, slctFolder;
     private String mPath;
     private boolean showHidden;
     private CompositeFilter mFilter;
     private EmptyRecyclerView rc;
     private DirectoryAdapter rcAdapter;
-    private FileClickListener mFileClickListener;
+    private FileClickListener OnFileClicked;
+    private FolderClickListener OnFolderClicked;
 
     public void setInterFace(FileClickListener f) {
-        mFileClickListener = f;
+        OnFileClicked = f;
+    }
+
+    public void setInterFace(FolderClickListener f) {
+        OnFolderClicked = f;
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mFileClickListener = null;
+        OnFileClicked = null;
     }
 
     @Nullable
@@ -54,6 +61,7 @@ public class DirectoryFragment extends DialogFragment {
         View view = inflater.inflate(R.layout.fragment_directory, container, false);
         rc = view.findViewById(R.id.directory_recycler_view);
         mEmptyView = view.findViewById(R.id.directory_empty_view);
+        slctFolder = view.findViewById(R.id.slctFolder);
         return view;
     }
 
@@ -62,6 +70,13 @@ public class DirectoryFragment extends DialogFragment {
         super.onViewCreated(view, savedInstanceState);
         initArgs();
         initFilesList();
+        slctFolder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (OnFolderClicked != null)
+                    OnFolderClicked.onFolderClicked(mPath);
+            }
+        });
     }
 
     private void initFilesList() {
@@ -78,11 +93,8 @@ public class DirectoryFragment extends DialogFragment {
                     mPath = mPath.substring(0, mPath.lastIndexOf(File.separator));
                     initFilesList();
                     Log.d("backPaht", mPath);
-                }
-                //
-                if (mFileClickListener != null && !gobackFile) {
-                    mFileClickListener.onFileClicked(clickedFile);
-
+                } else if (OnFileClicked != null) {
+                    OnFileClicked.onFileClicked(clickedFile);
                 }
             }
         });
@@ -110,12 +122,17 @@ public class DirectoryFragment extends DialogFragment {
         }
         mFilter = (CompositeFilter) getArguments().getSerializable(ARG_FILTER);
         showHidden =  getArguments().getBoolean(ARG_SHOW_HIDDEN);
+        slctFolder.setVisibility(getArguments().getBoolean(ARG_FOLDER_PICKER) ? View.VISIBLE : View.GONE);
+
     }
 
     public interface FileClickListener {
         void onFileClicked(File clickedFile);
     }
 
+    public interface FolderClickListener {
+        void onFolderClicked(String FolderPath);
+    }
     @Override
     public void onResume() {
         super.onResume();

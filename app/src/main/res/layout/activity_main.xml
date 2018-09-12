@@ -12,8 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onnew"
-        android:text="Show Dialog"
+        android:text="Select File"
     />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="slctFolderClick"
+        android:text="Select Folder" />
 
 </LinearLayout>

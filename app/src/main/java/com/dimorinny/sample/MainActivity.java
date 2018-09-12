@@ -11,12 +11,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import ir.esfandune.filepickerDialog.filter.CompositeFilter;
-import ir.esfandune.filepickerDialog.ui.DirectoryFragment;
-
 import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;
+
+import ir.esfandune.filepickerDialog.filter.CompositeFilter;
+import ir.esfandune.filepickerDialog.ui.DirectoryFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -81,5 +81,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void onnew(View view) {
         checkPermissionsAndOpenFilePicker();
+    }
+
+    public void slctFolderClick(View view) {
+        DirectoryFragment instance = new DirectoryFragment();
+        Bundle args = new Bundle();
+        args.putString(DirectoryFragment.ARG_FILE_PATH, Environment.getExternalStorageDirectory().getAbsolutePath());
+        args.putSerializable(DirectoryFragment.ARG_FILTER, new CompositeFilter(new ArrayList<FileFilter>()));
+        args.putBoolean(DirectoryFragment.ARG_SHOW_HIDDEN, false);
+        args.putBoolean(DirectoryFragment.ARG_FOLDER_PICKER, true);
+        instance.setArguments(args);
+        instance.show(getSupportFragmentManager(), "AnyTag");
+        DirectoryFragment.FolderClickListener f = new DirectoryFragment.FolderClickListener() {
+
+            @Override
+            public void onFolderClicked(String FolderPath) {
+                Toast.makeText(MainActivity.this, "پوشه انتخاب شد" + "\n" + FolderPath, Toast.LENGTH_SHORT).show();
+            }
+        };
+        instance.setInterFace(f);
     }
 }
