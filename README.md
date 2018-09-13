@@ -45,8 +45,24 @@ dependencies {
         });
     }
 ```
-
-
+## FileFilter
+```
+ArrayList<FileFilter> ff = new ArrayList<>();
+                ff.add(new FileFilter() {
+                    @Override
+                    public boolean accept(File file) {
+                        return file.isDirectory() || file.getName().endsWith(".wave");
+                    }
+                });
+                CompositeFilter cf = new CompositeFilter(ff);
+                MainActivity context = (MainActivity) getActivity();
+                PickerDialog.FilePicker(context,null,false,cf).onFileSelect(new PickerDialog.FileClickListener() {
+                    @Override
+                    public void onFileClicked(File clickedFile) {
+                       
+                    }
+                });
+```         
 Runtime permissions:
 
 You should handle runtime permissions in activity, from what you called Material File Picker.
