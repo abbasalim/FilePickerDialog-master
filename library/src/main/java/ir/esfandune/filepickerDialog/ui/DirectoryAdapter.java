@@ -9,10 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nbsp.materialfilepicker.R;
-import ir.esfandune.filepickerDialog.utils.FileTypeUtils;
 
 import java.io.File;
 import java.util.List;
+
+import ir.esfandune.filepickerDialog.utils.FileTypeUtils;
 
 /**
  * Created by Dimorinny on 24.10.15.
@@ -55,7 +56,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<DirectoryAdapter.Dire
         mContext = context;
         mFiles = files;
         if (addBackBtn) {
-            File f = new File(DirectoryFragment.GO_BACK_ITEM_PATH);
+            File f = new File(PickerDialog.GO_BACK_ITEM_PATH);
             mFiles.add(0, f);
         }
 
@@ -80,7 +81,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<DirectoryAdapter.Dire
     public void onBindViewHolder(DirectoryViewHolder holder, int position) {
         File currentFile = mFiles.get(position);
 
-        if (currentFile.getPath().equals(DirectoryFragment.GO_BACK_ITEM_PATH)){
+        if (currentFile.getPath().equals(PickerDialog.GO_BACK_ITEM_PATH)) {
             holder.mFileImage.setImageResource(R.drawable.ic_back);
             holder.mFileSubtitle.setText("");
             holder.mFileTitle.setText("بازگشت");
@@ -93,7 +94,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<DirectoryAdapter.Dire
     }
 
     public boolean isEmpty() {
-        return mFiles.size()==0 || (mFiles.size()==1 && mFiles.get(0).getPath().equals(DirectoryFragment.GO_BACK_ITEM_PATH));
+        return mFiles.size() == 0 || (mFiles.size() == 1 && mFiles.get(0).getPath().equals(PickerDialog.GO_BACK_ITEM_PATH));
     }
 
     @Override

@@ -11,7 +11,7 @@ ext {
     libraryDescription = 'File picker Dialog library for Android'
 
     siteUrl = 'http://waveacc.ir'
-    gitUrl = 'https://github.com/abbasalim/FilePickerDialog-master'
+    gitUrl = 'https://github.com/abbasalim/PickerDialog-master'
 
     libraryVersion = '1.8'
 
@@ -20,7 +20,7 @@ ext {
     developerEmail = 'abbasali88m@yahoo.com'
 
     licenseName = 'GNU GENERAL PUBLIC LICENSE Version 2'
-    licenseUrl = 'https://github.com/abbasalim/FilePickerDialog-master/blob/master/LICENSE'
+    licenseUrl = 'https://github.com/abbasalim/PickerDialog-master/blob/master/LICENSE'
     allLicenses = ["GNU-GPL-2.0"]
 }
 
