@@ -84,7 +84,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<DirectoryAdapter.Dire
         if (currentFile.getPath().equals(PickerDialog.GO_BACK_ITEM_PATH)) {
             holder.mFileImage.setImageResource(R.drawable.ic_back);
             holder.mFileSubtitle.setText("");
-            holder.mFileTitle.setText("بازگشت");
+            holder.mFileTitle.setText(R.string.back);
         }else {
             FileTypeUtils.FileType fileType = FileTypeUtils.getFileType(currentFile);
             holder.mFileImage.setImageResource(fileType.getIcon());

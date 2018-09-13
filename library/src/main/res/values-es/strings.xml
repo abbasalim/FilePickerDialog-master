@@ -15,4 +15,5 @@
     <string name="type_power_point">Powerpoint</string>
     <string name="type_video">Vídeo</string>
     <string name="type_word">Documento Word</string>
+    <string name="back">Volver</string>
 </resources>

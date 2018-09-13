@@ -18,4 +18,5 @@
     <string name="type_apk">APK</string>
     <string name="type_wave">پشتیبان حسابداری موج</string>
     <string name="selectfolder">انتخاب این پوشه</string>
+    <string name="back">بازگشت</string>
 </resources>

@@ -13,7 +13,10 @@ import android.widget.Toast;
 import com.esfandune.sample.R;
 
 import java.io.File;
+import java.io.FileFilter;
+import java.util.ArrayList;
 
+import ir.esfandune.filepickerDialog.filter.CompositeFilter;
 import ir.esfandune.filepickerDialog.ui.PickerDialog;
 
 public class MainActivity extends AppCompatActivity {
@@ -80,4 +83,20 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void slctFiltrdFileClick(View view) {
+        ArrayList<FileFilter> ff = new ArrayList<>();
+        ff.add(new FileFilter() {
+            @Override
+            public boolean accept(File file) {
+                return file.isDirectory() || file.getName().endsWith(".pdf");
+            }
+        });
+        CompositeFilter cf = new CompositeFilter(ff);
+        PickerDialog.FilePicker(this, null, true, cf).onFileSelect(new PickerDialog.FileClickListener() {
+            @Override
+            public void onFileClicked(File clickedFile) {
+
+            }
+        });
+    }
 }

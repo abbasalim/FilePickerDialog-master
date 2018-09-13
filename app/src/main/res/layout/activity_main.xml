@@ -21,4 +21,10 @@
         android:onClick="slctFolderClick"
         android:text="Select Folder" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="slctFiltrdFileClick"
+        android:text="Select pdf File AND show Hidden Files" />
+
 </LinearLayout>

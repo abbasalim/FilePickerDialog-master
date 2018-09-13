@@ -15,4 +15,5 @@
     <string name="type_power_point">Prezentace</string>
     <string name="type_word">Dokument</string>
     <string name="type_apk">APK</string>
+    <string name="back">Vrátit</string>
 </resources>

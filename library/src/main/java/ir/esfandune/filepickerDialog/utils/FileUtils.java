@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Dimorinny on 24.10.15.
  */
 public class FileUtils {
-    public static List<File> getFileListByDirPath(String path, FileFilter filter,boolean showHidden) {
+    public static List<File> getFileListByDirPath(String path, FileFilter filter, boolean showHidden, boolean onlyDir) {
         File directory = new File(path);
         File[] files = directory.listFiles(filter);
 
@@ -21,8 +21,10 @@ public class FileUtils {
 
         List<File> result =new ArrayList<>();
         for (File f:files) {
-            if (showHidden ||  !f.getName().startsWith("."))
-            result.add(f);
+            if (showHidden || !f.getName().startsWith(".")) {
+                if (!onlyDir || f.isDirectory())
+                    result.add(f);
+            }
         }
 //        List<File> result = Arrays.asList(files); چون add نداره و سایز ثابته
         Collections.sort(result, new FileComparator());

@@ -44,6 +44,7 @@ public class PickerDialog extends DialogFragment {
     private DirectoryAdapter rcAdapter;
     private FileClickListener OnFileClicked;
     private FolderClickListener OnFolderClicked;
+    private boolean FolderPickMod;
 
     public static PickerDialog FolderPicker(AppCompatActivity Act) {
         return FolderPicker(Act, null, false, new CompositeFilter(new ArrayList<FileFilter>()));
@@ -118,7 +119,7 @@ public class PickerDialog extends DialogFragment {
     }
 
     private void initFilesList() {
-        rcAdapter = new DirectoryAdapter(getActivity(), FileUtils.getFileListByDirPath(mPath, mFilter, showHidden), !mPath.equals("/storage"));
+        rcAdapter = new DirectoryAdapter(getActivity(), FileUtils.getFileListByDirPath(mPath, mFilter, showHidden, FolderPickMod), !mPath.equals("/storage"));
         rcAdapter.setOnItemClickListener(new DirectoryAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
@@ -162,7 +163,8 @@ public class PickerDialog extends DialogFragment {
         }
         mFilter = (CompositeFilter) getArguments().getSerializable(ARG_FILTER);
         showHidden = getArguments().getBoolean(ARG_SHOW_HIDDEN);
-        slctFolder.setVisibility(getArguments().getBoolean(ARG_FOLDER_PICKER) ? View.VISIBLE : View.GONE);
+        FolderPickMod = getArguments().getBoolean(ARG_FOLDER_PICKER);
+        slctFolder.setVisibility(FolderPickMod ? View.VISIBLE : View.GONE);
 
     }
 
