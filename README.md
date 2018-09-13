@@ -45,7 +45,11 @@ dependencies {
         });
     }
 ```
-## FileFilter
+## Other Options:
+* open Specific Path 
+* show Hidden file
+* file Filter
+## Example FileFilter And Show Hidden Files
 ```
 ArrayList<FileFilter> ff = new ArrayList<>();
                 ff.add(new FileFilter() {
@@ -56,7 +60,7 @@ ArrayList<FileFilter> ff = new ArrayList<>();
                 });
                 CompositeFilter cf = new CompositeFilter(ff);
                 MainActivity context = (MainActivity) getActivity();
-                PickerDialog.FilePicker(context,null,false,cf).onFileSelect(new PickerDialog.FileClickListener() {
+                PickerDialog.FilePicker(context,null,true,cf).onFileSelect(new PickerDialog.FileClickListener() {
                     @Override
                     public void onFileClicked(File clickedFile) {
                        
