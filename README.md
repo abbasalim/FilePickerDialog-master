@@ -7,18 +7,21 @@ file picker Dialog library for Android
 
 ## Using
 
-Add repository url and dependency in application module gradle file:
+Step 1. Add it in your root build.gradle at the end of repositories:
 
 ```gradle
-repositories {
-    maven {
-        url  " " 
-    }
-}
-
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+Step 2. Add the dependency
+```gradle
 dependencies {
-    compile ' '
-}
+	        implementation 'com.github.abbasalim:FilePickerDialog-master:1.0'
+	}
 ```
 
 ## Open file Or Folder picker:
