@@ -28,9 +28,16 @@
             android:id="@+id/item_file_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:singleLine="true"
             style="@style/TextAppearance.AppCompat.Medium"
             android:textStyle="bold"
+
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:freezesText="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
             />
 
         <TextView

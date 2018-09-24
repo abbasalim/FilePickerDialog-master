@@ -3,9 +3,5 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application>
-
-        <activity android:name="ir.esfandune.filepickerDialog.ui.FilePickerActivity"
-            android:theme="@style/MFP_BaseTheme">
-        </activity>
     </application>
 </manifest>
