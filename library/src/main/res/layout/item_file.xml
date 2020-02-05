@@ -12,8 +12,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:src="@drawable/ic_folder_48dp"
-        android:layout_margin="16dp"
-        android:alpha="0.6"/>
+        android:layout_margin="16dp" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -30,6 +29,7 @@
             android:layout_height="wrap_content"
             style="@style/TextAppearance.AppCompat.Medium"
             android:textStyle="bold"
+            android:textColor="#000000"
 
             android:ellipsize="marquee"
             android:focusable="true"
