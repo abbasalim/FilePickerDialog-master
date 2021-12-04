@@ -1,4 +1,4 @@
-# Android File Picker Dialog
+# Android File Picker Dialog (Depracated in Androi 11 or Above)
 file picker Dialog library for Android
 
 ![](http://uupload.ir/files/59lc_screenshot_from_2018-09-13_13-36-45.png)
